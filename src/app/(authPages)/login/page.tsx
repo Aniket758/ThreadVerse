@@ -23,11 +23,11 @@ export default function Login() {
   const [errors, setErrors] = useState<AuthErrorType>({});
   const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (status == "authenticated") {
-      router.push("/");
-    }
-  }, [status]);
+  // useEffect(() => {
+  //   if (status == "authenticated") {
+  //     router.push("/");
+  //   }
+  // }, [status]);
 
   const login = (event: React.FormEvent) => {
     event.preventDefault();
