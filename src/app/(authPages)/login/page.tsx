@@ -42,8 +42,8 @@ export default function Login() {
           signIn("credentials", {
             email: authState.email,
             password: authState.password,
-            // callbackUrl: "/",
-            redirect: true,
+            callbackUrl: "/",
+            redirect: false,
           });
         } else if (response.status == 400) {
           setErrors(response.errors);
