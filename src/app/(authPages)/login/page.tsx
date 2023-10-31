@@ -43,7 +43,7 @@ export default function Login() {
             email: authState.email,
             password: authState.password,
             callbackUrl: "/",
-            redirect: true,
+            redirect: false,
           });
         } else if (response.status == 400) {
           setErrors(response.errors);
