@@ -23,11 +23,12 @@ export default function Login() {
   const [errors, setErrors] = useState<AuthErrorType>({});
   const [loading, setLoading] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   if (status == "authenticated") {
-  //     router.push("/");
-  //   }
-  // }, [status]);
+  useEffect(() => {
+    console.log(status);
+    if (status == "authenticated") {
+      router.push("/");
+    }
+  }, [status]);
 
   const login = (event: React.FormEvent) => {
     event.preventDefault();
@@ -41,7 +42,7 @@ export default function Login() {
           signIn("credentials", {
             email: authState.email,
             password: authState.password,
-            callbackUrl: "/",
+            // callbackUrl: "/",
             redirect: true,
           });
         } else if (response.status == 400) {
